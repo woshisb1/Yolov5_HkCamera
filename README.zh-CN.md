@@ -54,9 +54,24 @@ Ultralytics YOLOv5 🚀 是由 [Ultralytics](https://www.ultralytics.com/) 开�
 ```bash
 # 安装 ultralytics 包
 pip install ultralytics
+conda install torch2trt
 pip install --upgrade opencv-python
 pip install ultralytics -i https://mirrors.aliyun.com/pypi/simple/
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+conda install -c nvidia tensorrt=8.6.1
+conda config --add channels nvidia
+conda config --add channels nvidia/label/cuda-11.8
+conda create -n tensorrt python=3.10
+conda activate tensorrt
+conda config --add channels nvidia
+conda config --add channels nvidia/label/cuda-11.8.0 
+# 安装 TensorRT 核心库
+conda install tensorrt=8.6.1
+
+# 安装 Python 绑定（如果需要）
+pip install tensorrt==8.6.1
+pip install tensorrt
+sudo apt-get install libnvinfer8 libnvinfer-plugin8 libnvparsers8
 ```
 
 <div align="center">
